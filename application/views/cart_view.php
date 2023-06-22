@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse order-lg-1" id="navMenu">
                 <ul class="navbar-nav mx-auto text-center">
                     <li class="nav-item px-2 py-2">
-                        <a class="nav-link text-uppercase text-dark" href="<?php echo site_url ('C_Home/index'); ?>" class = "active">Home</a>
+                        <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/home')?>#header">Home</a>
                     </li>
                     <li class="nav-item px-2 py-2">
                         <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/menu')?>#collection">Menu</a>
@@ -106,7 +106,12 @@
                         <td colspan="3"></td>
                         <?php if ($this->cart->total_items() > 0) : ?>
                             <td id="total-price" class="text-left" style="text-align: center;">Total Harga: <b><span id="total-amount"><?php echo 'Rp. ' . $this->cart->total(); ?></span></b></td>
-                            <td><a href="<?php echo base_url() . 'checkout'; ?>" class="btn btn-sm btn-success btn-block">Checkout <i class="fas fa-angle-right"></i></a></td>
+                            <td>
+                                <form action="<?php echo site_url('history'); ?>" method="POST" class="form-container shadow-container" style="width:80%">
+                                    <input type="hidden" name="cart_total" value="<?php echo $this->cart->total(); ?>">
+                                    <button type="submit" name="checkout" class="btn btn-success">Checkout <i class="fas fa-angle-right"></i></button>
+                                </form>
+                            </td>
                         <?php endif; ?>
                     </tr>
                 </tfoot>
@@ -154,15 +159,14 @@
 
     // Panggil updateTotal saat halaman dimuat
     $(document).ready(function () {
-    updateTotal();
+        updateTotal();
 
-    <?php if ($this->session->flashdata('item_deleted')) : ?>
-        alert('<?php echo $this->session->flashdata('item_deleted'); ?>');
-        // Remove the following line to prevent redirecting to another page
-        // window.location.href = '<?php echo base_url('cart'); ?>';
-    <?php endif; ?>
-});
-
+        <?php if ($this->session->flashdata('item_deleted')) : ?>
+            alert('<?php echo $this->session->flashdata('item_deleted'); ?>');
+            // Remove the following line to prevent redirecting to another page
+            // window.location.href = '<?php echo base_url('cart'); ?>';
+        <?php endif; ?>
+    });
 </script>
 
 </body>

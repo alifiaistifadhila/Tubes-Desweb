@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +15,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
+
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="<?php echo base_url('index.php/menu_detail/index') ?>#header">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0"
+                href="<?php echo base_url('index.php/menu_detail/index') ?>#header">
                 <i class="fas fa-cloud-meatball" style="color: #ff8551;"></i>
                 <span class="text-uppercase fw-lighter ms-2">Foodiest</span>
             </a>
@@ -26,7 +29,7 @@
             <div class="collapse navbar-collapse order-lg-1" id="navMenu">
                 <ul class="navbar-nav mx-auto text-center">
                     <li class="nav-item px-2 py-2">
-                        <a class="nav-link text-uppercase text-dark" href="<?php echo site_url ('C_Home/index'); ?>" class = "active">Home</a>
+                        <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/home')?>#header">Home</a>
                     </li>
                     <li class="nav-item px-2 py-2">
                         <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/menu')?>#collection">Menu</a>
@@ -61,23 +64,21 @@
                     <!-- Table headers go here -->
                     <thead>
                         <tr>
-                            <th>Tanggal</th>
-                            <th>Nama User</th>
-                            <th>Nama Menu</th>
-                            <th>Kuantitas</th>
-                            <th>Total Harga</th>
-                            <th>Alamat</th>
+                            <th width="12%">Tanggal</th>
+                            <th width="8%">Nama Menu</th>
+                            <th width="5%" style="text-align: center;">Kuantitas</th>
+                            <th width="10%" style="text-align: center;">Total Harga</th>
+                            <th width="10%">Metode Pembayaran</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($history as $item) : ?>
+                        <?php foreach ($history as $order) : ?>
                             <tr>
-                                <td><?php echo $item['tanggal']; ?></td>
-                                <td><?php echo $item['nama_user']; ?></td>
-                                <td><?php echo $item['nama_menu']; ?></td>
-                                <td><?php echo $item['kuantitas']; ?></td>
-                                <td><?php echo 'Rp. ' . $item['total_harga']; ?></td>
-                                <td><?php echo $item['alamat']; ?></td>
+                                <td><?php echo $order['tanggal']; ?></td>
+                                <td><?php echo $order['nama_menu']; ?></td>
+                                <td style="text-align: center;"><?php echo $order['jumlah']; ?></td>
+                                <td style="text-align: center;"><?php echo 'Rp. ' . $order['harga_total']; ?></td>
+                                <td><?php echo $order['nama_metode']; ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -88,4 +89,5 @@
     <!-- End of history items -->
 
 </body>
+
 </html>

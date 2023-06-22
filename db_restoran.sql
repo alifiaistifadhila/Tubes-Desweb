@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2023 at 02:56 AM
+-- Generation Time: Jun 22, 2023 at 06:40 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -88,7 +88,6 @@ INSERT INTO `t_metode_pembayaran` (`id_metode_pembayaran`, `nama_metode`) VALUES
 
 CREATE TABLE `t_order` (
   `id_order` int(11) NOT NULL,
-  `id_user` int(11) DEFAULT NULL,
   `id_menu` int(11) DEFAULT NULL,
   `jumlah` int(5) DEFAULT NULL,
   `harga_total` int(11) DEFAULT NULL,
@@ -100,32 +99,8 @@ CREATE TABLE `t_order` (
 -- Dumping data for table `t_order`
 --
 
-INSERT INTO `t_order` (`id_order`, `id_user`, `id_menu`, `jumlah`, `harga_total`, `tanggal`, `id_metode_pembayaran`) VALUES
-(1, 2, 1, 2, 50000, '2023-06-12', 3);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `t_user`
---
-
-CREATE TABLE `t_user` (
-  `id_user` int(11) NOT NULL,
-  `username` varchar(50) DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL,
-  `nama` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `no_telp` varchar(15) DEFAULT NULL,
-  `alamat` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `t_user`
---
-
-INSERT INTO `t_user` (`id_user`, `username`, `password`, `nama`, `email`, `no_telp`, `alamat`) VALUES
-(1, 'alifiaisti', '123', 'alifia', 'alifia@gmail.com', '08123456789', 'Bandung'),
-(2, 'meutiajs', '456', 'meutia', 'meutia@gmail.com', '081984672130', 'Depok');
+INSERT INTO `t_order` (`id_order`, `id_menu`, `jumlah`, `harga_total`, `tanggal`, `id_metode_pembayaran`) VALUES
+(1, 1, 2, 50000, '2023-06-12', 3);
 
 --
 -- Indexes for dumped tables
@@ -149,14 +124,7 @@ ALTER TABLE `t_metode_pembayaran`
 ALTER TABLE `t_order`
   ADD PRIMARY KEY (`id_order`),
   ADD KEY `fk_metodePembayaran` (`id_metode_pembayaran`),
-  ADD KEY `fk_menu` (`id_menu`),
-  ADD KEY `fk_user` (`id_user`);
-
---
--- Indexes for table `t_user`
---
-ALTER TABLE `t_user`
-  ADD PRIMARY KEY (`id_user`);
+  ADD KEY `fk_menu` (`id_menu`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -181,12 +149,6 @@ ALTER TABLE `t_order`
   MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `t_user`
---
-ALTER TABLE `t_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- Constraints for dumped tables
 --
 
@@ -195,8 +157,7 @@ ALTER TABLE `t_user`
 --
 ALTER TABLE `t_order`
   ADD CONSTRAINT `fk_menu` FOREIGN KEY (`id_menu`) REFERENCES `t_menu` (`id_menu`),
-  ADD CONSTRAINT `fk_metodePembayaran` FOREIGN KEY (`id_metode_pembayaran`) REFERENCES `t_metode_pembayaran` (`id_metode_pembayaran`),
-  ADD CONSTRAINT `fk_user` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id_user`);
+  ADD CONSTRAINT `fk_metodePembayaran` FOREIGN KEY (`id_metode_pembayaran`) REFERENCES `t_metode_pembayaran` (`id_metode_pembayaran`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
