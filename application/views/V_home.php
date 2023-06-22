@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="title text-left py-5">
                     <h2 class="position-relative d-inline-block">Mengapa memilih kami?</h2>
                 </div>
-            <p class="lead my-3">FOODIEST didirikan pada tahu 2023 di Bandung, menyediakan berbagai macam hidangan tradisional dibuat denagn bahan-bahan berkualitas tinggi. </p>
+            <p class="lead my-3">FOODIEST didirikan pada tahun 2023 di Bandung, menyediakan berbagai macam hidangan tradisional dibuat denagn bahan-bahan berkualitas tinggi. </p>
             </div>
         </div>
         <!-- end of tentang kami -->
@@ -106,9 +106,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
-                <div class="button">
-                    <a href="#" class="btn btn-primary">Lihat semua produk</a>
-                </div>
+            </div><br>
+            <div class="button" style="align-items: center; justify-content: center;">
+                <a href="<?php echo base_url('index.php/menu')?>#collection" class="btn btn-primary" style="align-items: center; justify-content: center;">Lihat semua produk</a>
             </div>
         </div>
     </div>
