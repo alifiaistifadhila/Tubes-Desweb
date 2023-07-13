@@ -26,16 +26,10 @@
             <div class="collapse navbar-collapse order-lg-1" id="navMenu">
                 <ul class="navbar-nav mx-auto text-center">
                     <li class="nav-item px-2 py-2">
-                        <a class="nav-link text-uppercase text-dark" href="<?php echo site_url ('C_Home/index'); ?>" class = "active">Home</a>
+                        <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/c_home/index'); ?>">Home</a>
                     </li>
                     <li class="nav-item px-2 py-2">
                         <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/menu')?>#collection">Menu</a>
-                    </li>
-                    <li class="nav-item px-2 py-2">
-                        <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/order')?>">Order</a>
-                    </li>
-                    <li class="nav-item px-2 py-2">
-                        <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/history')?>">History</a>
                     </li>
                 </ul>
             </div>

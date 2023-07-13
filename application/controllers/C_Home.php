@@ -7,3 +7,5 @@ class C_Home extends CI_Controller {
 		$this->load->view('V_Home');
 	}
 }
+
+?>

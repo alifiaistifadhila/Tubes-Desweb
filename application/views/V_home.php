@@ -35,23 +35,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="collapse navbar-collapse order-lg-1" id="navMenu">
                 <ul class="navbar-nav mx-auto text-center">
                     <li class="nav-item px-2 py-2">
-                        <a class="nav-link text-uppercase text-dark" href="<?php echo site_url ('C_Home/index'); ?>" class = "active">Home</a>
+                        <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/c_home/index'); ?>">Home</a>
                     </li>
                     <li class="nav-item px-2 py-2">
                         <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/menu')?>#collection">Menu</a>
-                    </li>
-                    <li class="nav-item px-2 py-2">
-                        <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/order')?>">Order</a>
-                    </li>
-                    <li class="nav-item px-2 py-2">
-                        <a class="nav-link text-uppercase text-dark" href="<?php echo base_url('index.php/history')?>">History</a>
                     </li>
                 </ul>
             </div>
 
             <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-3" href="<?php echo base_url('index.php/cart')?>#">
                 <i class="fas fa-shopping-cart me-2"></i>
-                <span class="text-uppercase fw-lighter">Cart</span>
             </a>
         </div>
     </nav>
@@ -79,30 +72,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <!-- menu 1 -->
                 <div class="col">
                     <div class="card" style="width: auto;">
-                        <img class="card-img-top" src="assets/images/nasgor.png" alt="Card image cap">
+                    <img class="card-img-top" src="<?php echo base_url('assets/images/nasgor.png'); ?>" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Nasi Goreng</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Nasi yang digoreng dengan bumbu rempah dan dilengkapi dengan telur, ayam, dan sayuran.</p>
                         </div>
                     </div>
                 </div>
                 <!-- menu 2 -->
                 <div class="col">
                     <div class="card" style="width: auto;">
-                        <img class="card-img-top" src="assets/images/rendang.png" alt="Card image cap">
+                    <img class="card-img-top" src="<?php echo base_url('assets/images/rendang.png'); ?>" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Rendang</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Daging sapi yang dimasak dalam santan dan rempah-rempah, dengan rasa pedas dan gurih.</p>
                         </div>
                     </div>
                 </div>
                 <!-- menu 3 -->
                 <div class="col">
                     <div class="card" style="width: auto;">
-                        <img class="card-img-top" src="assets/images/es campur.png" alt="Card image cap">
+                    <img class="card-img-top" src="<?php echo base_url('assets/images/es campur.png'); ?>" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Es Campur</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Es Campur adalah minuman yang terdiri dari campuran berbagai bahan seperti buah, sirup, dll.</p>
                         </div>
                     </div>
                 </div>
@@ -143,7 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
                 <div class="col-lg-4">
                     <img class="rounded-circle shadow-1-strong mb-4"
-                    src="assets/images/bayu.jpg" alt="avatar"
+                    src="<?php echo base_url('assets/images/bayu.jpg'); ?>" alt="avatar"
                     style="width: 150px;" />
                     <h5 class="mb-3">Bayu</h5>
                     <p>PNS</p>
@@ -162,7 +155,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <div class="col-lg-4 d-none d-lg-block">
                     <img class="rounded-circle shadow-1-strong mb-4"
-                    src="assets/images/gigi.jpg" alt="avatar"
+                    src="<?php echo base_url('assets/images/gigi.jpg'); ?>" alt="avatar"
                     style="width: 150px;" />
                     <h5 class="mb-3">Gigi</h5>
                     <p>Model</p>
@@ -183,7 +176,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <div class="col-lg-4 d-none d-lg-block">
                     <img class="rounded-circle shadow-1-strong mb-4"
-                    src="assets/images/sule.jpg" alt="avatar"
+                    src="<?php echo base_url('assets/images/sule.jpg'); ?>" alt="avatar"
                     style="width: 150px;" />
                     <h5 class="mb-3">Sule</h5>
                     <p>Komedian</p>
